@@ -2,29 +2,18 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Landy Bisquit</title>
-	<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(85978192, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/85978192" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+<title>Landy Bisquit: oeuvre</title>
 	<style>
-		html, body {background-color: black; margin: 0; padding: 0}
-		a {color: white; text-decoration: none;}
-		.header{display: flex; justify-content: space-between; padding: 0; background-color: #0067c0; color: white}
+		html, body {background-color: black; margin: 0; padding: 0; top: 0; left: 0; right:0;}
+
+		.header{display: flex; justify-content: space-between; padding: 0; background-color: #0067c0; color: white; font-family: "Segoe Print";}
 		.section {display: flex; align-items: center;}
 		.buttons {padding: 10px; transition: .5s; font-family: Comic Sans MS;}
+		.buttons a {text-decoration: none;}
 		.tittle {margin-right: 10px; font-family: "Segoe Print"; font-weight: bold;}
 		.buttons:hover {background-color: #0067f9;}
+		.ml1, .ml2{display: flex; margin: 5%; margin-top: 2%; align-items: center}
+		footer {display: flex; justify-content: space-around; background-color: #0067c0}
 		.body_notify{
     display: flex;
     justify-content: space-between;
@@ -42,23 +31,77 @@
     justify-content: space-between;
     margin: auto;
 }
+		.notifications {background-color: #323232; }
+		.notifications p {
+    color: white;
+    font-family: "Segoe Print";
+    font-size: small;
+	padding: 5px;
+	margin: 0;
+}
+		.notifications a {
+    color: #0067C0;
+    text-decoration: underline;
+}
+		.filesystem p {
+    color: #8E8E8E;
+    font-family: "Candara";
+    margin: 5px;
+}
+		.body, .txt H1, H2, p{color: white; font-family: Segoe UI}
+		.body, .txt div > a, div > H2 > a{color: white; font-family: Segoe UI}
 	</style>
 </head>
 
 <body>
-<div class="header">
+	<nav class="header">
 		<div class="section">
-		<div class="buttons"><a href="#">Творчество</a></div>
-		<div class="buttons"><a href="#">Услуги</a></div>
-		<div class="buttons"><a href="#">Лента</a></div>
+		<div class="buttons"><a style="color: white" href="#">Творчество</a></div>
+		<div class="buttons"><a style="color: white" href="#">Услуги</a></div>
+		<div class="buttons"><a style="color: white" href="#">Лента</a></div>
 		</div>
 		<div class="section">
-		<div class="tittle"><a href="#">Landy Bisquit</a></div>
+		<div class="tittle"><a style="color: white; text-decoration: none" href="landybisquit.github.io">Landy Bisquit</a></div>
 		</div>
+</nav>
+	<div class="notifications">
+		<div class="dev"><p>Сайт находится в процессе разработки. Обратная связь: <a href="mailto:landybisquit@gmail.com">landybisquit@gmail.com</a></p></div>
+		<div class="cookie"><p>Сайт может использовать <a href="/documents/cookie.html">Cookie</a></p></div>
+	</div>
+	
+	<div class="filesystem"><p>Главная &#62;</p></div>
+	<div class="body">
+		<div class="txt">
+		  <h1 style="text-align: center;">Добро пожаловать</h1>
+		  <p style="text-align: center; padding-left: 5%; padding-right: 5%;">На даный момент страница ещё не совсем готова. Работать над остальными разделами я ещё не начинал, но визитка какая-никакая нужна. Сейчас главная страница соберёт содержимое всех разделов, позже я их раскидаю по местам. Если хотите следить за новостями, то переходите в моё <a style="color: #0067C0; text-decoration: underline; /* [disabled]font-family: Segoe UI; */" href="vk.com/l.b.artist">сообщество ВКонтакте</a> и подписывайтесь на рассылку.</p>
+        </div>
+	</div>
+<div class="music" style="margin-top: 5%">
+	<div class="txt" style="margin-left: 5%; margin-right: 5%">
+		<h1 style="text-align: left; color: white; font-family: Segoe UI;">Музыка</h1>
+		<p style="color: white; font-family: Segoe UI; text-align: left;">На данный момент моим основным творческим направлением является музыка. Здесь вы можете увидеть мои текущие релизы.</p>
+	</div>
+	<div class="musiclink">
+		<div class="ml1" onclick="location.href='https://links.freshtunes.com/ALkaR';">
+			<img src="https://raw.githubusercontent.com/landybisquit/documents/main/Catch%20the%20rythm-min.jpg" style="width: 20%; height: 20%" alt="catch the rythm">
+			<div class="txt" style="margin-left: 5%">
+			<h2><a href="https://links.freshtunes.com/ALkaR">Catch the Rythm</a></h2>
+			<p>Сингл в жанре SKA. Смешение джазовой, инструментальной и поп-музыки с элементами электроники. Полсностью выполнен на виртуальных интструментах: LABS и Flex. Особенность в том, что трек написан за 2 дня, а обложку приходилось исправлять 3 раза по требованию модерации. Кстати, цвет на заднем фоне был создан автоматически, при этом он хорошо сочетается с основным содержимым.</p>
+			</div>
+		</div>
+		<div class="ml2">
+		<img src="https://raw.githubusercontent.com/landybisquit/documents/main/begining%20finaly%20(1).jpg" style="width: 20%; height: 20%" alt="begining">
+			<div class="txt" style="margin-left: 5%">
+			<h2><a href="https://links.freshtunes.com/L4W8W">Begining</a></h2>
+			<p>Если до этого трека я лишь пытался делать музыку, то этот трек показател мне то, что я всё-таки могу не пытаться, а делать музыку. Я над ним довольно много работал, искал хорошие плагины, эффекты. С обложкой я тоже повозился, надеюсь, вы заметили, что это буквы из стекла в 3D, а учитывая имеющиеся мощности моего "калькулятора", это было долго.</p>
+			<p>Я знаю, что begining правильно как beginning, с двумя n.  Всё как надо.</p>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="body_notify">
-	<p>Сайт в разработке! Пока что доступен не весь контент. Контактная почта: <a href="mailto:landybisquit@gmail.com">landybisquit@gmail.com</a></p>
-</div>
-	<iframe allowfullscreen="" height="1000" width="370" src="https://band.link/L4W8W/iframe?footer=1&amp;header=1&amp;picture=1&amp;player_enabled=1&amp;theme=dark&amp;title=1&amp;youtube_enabled=1" frameborder="0" scrolling="no"></iframe>
+<footer>
+	<div class="section"><p>&#169; Landy Bisquit 2021</p></div>
+	<div class="section"><a href="mailto:landybisquiy@gmail.com" style="color: white; font-family: Segoe UI">landybisquit@gmail.com</a></div>
+</footer>
 </body>
 </html>
