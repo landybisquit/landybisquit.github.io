@@ -1,111 +1,76 @@
 <!doctype html>
-<html>
+<html lang="ru-RU">
 <head>
-<meta charset="utf-8">
-<meta name="yandex-verification" content="b290cd2373eba5d9" />
-<meta name="description" content="Landy Bisquit. Главная страница сайта. Здесь можно найти всю имеющуюся информацию обо мне. Сайт разрабатывается.">
-<meta name="Keywords" content="Лэнди Бисквит, Landy Bisquit, музыка, Landy Bisuit Artist">
-<title>Landy Bisquit</title>
-	<link rel="icon" href="https://raw.githubusercontent.com/landybisquit/landybisquit.github.io/main/favicon.svg" type="image/svg+xml">
-	<style>
-		html, body {background-color: black; margin: 0; padding: 0; top: 0; left: 0; right:0;}
-
-		.header{display: flex; justify-content: space-between; padding: 0; background-color: #0067c0; color: white; font-family: "Segoe Print";}
-		.section {display: flex; align-items: center;}
-		.buttons {padding: 10px; transition: .5s; font-family: Comic Sans MS;}
-		.buttons a {text-decoration: none;}
-		.tittle {margin-right: 10px; font-family: "Segoe Print"; font-weight: bold;}
-		.buttons:hover {background-color: #0067f9;}
-		.ml1, .ml2{display: flex; margin: 5%; margin-top: 2%; align-items: center}
-		footer {display: flex; justify-content: space-around; background-color: #0067c0}
-		.body_notify{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 11%;
-    text-align: center;
-    background-color: gray;
-    border-radius: 20px;
-}
-		.body_notify p{text-align: center; padding-left: 4%}
-		iframe {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-}
-		.notifications {background-color: #323232; }
-		.notifications p {
-    color: white;
-    font-family: "Segoe Print";
-    font-size: small;
-	padding: 5px;
-	margin: 0;
-}
-		.notifications a {
-    color: #0067C0;
-    text-decoration: underline;
-}
-		.filesystem p {
-    color: #8E8E8E;
-    font-family: "Candara";
-    margin: 5px;
-}
-		.body, .txt H1, H2, p{color: white; font-family: Segoe UI}
-		.body, .txt div > a, div > H2 > a{color: white; font-family: Segoe UI}
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Landy Bisquit | Главная</title>
+	<link rel="icon" href="favicon.svg" type="image/svg+xml">
+	<style type="text/css">
+	@import url("asset/styles/index.css");
+	@import url("asset/styles/mainpage.css");
 	</style>
+	<script src="script.js" defer></script>
 </head>
 
 <body>
-	<nav class="header">
-		<div class="section">
-		<div class="buttons"><a style="color: white" href="#">Творчество</a></div>
-		<div class="buttons"><a style="color: white" href="#">Услуги</a></div>
-		<div class="buttons"><a style="color: white" href="#">Лента</a></div>
-		</div>
-		<div class="section">
-		<div class="tittle"><a style="color: white; text-decoration: none" href="landybisquit.github.io">Landy Bisquit</a></div>
-		</div>
-</nav>
-	<div class="notifications">
-		<div class="dev"><p>Сайт находится в процессе разработки. Обратная связь: <a href="mailto:landybisquit@gmail.com">landybisquit@gmail.com</a></p></div>
-		<div class="cookie"><p>Сайт может использовать <a href="/documents/cookie.html">Cookie</a></p></div>
-	</div>
-	
-	<div class="filesystem"><p>Главная &#62;</p></div>
-	<div class="body">
-		<div class="txt">
-		  <h1 style="text-align: center;">Добро пожаловать</h1>
-		  <p style="text-align: center; padding-left: 5%; padding-right: 5%;">На даный момент страница ещё не совсем готова. Работать над остальными разделами я ещё не начинал, но визитка какая-никакая нужна. Сейчас главная страница соберёт содержимое всех разделов, позже я их раскидаю по местам. Если хотите следить за новостями, то переходите в моё <a style="color: #0067C0; text-decoration: underline; /* [disabled]font-family: Segoe UI; */" href="https://vk.com/l.b.artist">сообщество ВКонтакте</a> и подписывайтесь на рассылку.</p>
-        </div>
-	</div>
-<div class="music" style="margin-top: 5%">
-	<div class="txt" style="margin-left: 5%; margin-right: 5%">
-		<h1 style="text-align: left; color: white; font-family: Segoe UI;">Музыка</h1>
-		<p style="color: white; font-family: Segoe UI; text-align: left;">На данный момент моим основным творческим направлением является музыка. Здесь вы можете увидеть мои текущие релизы.</p>
-	</div>
-	<div class="musiclink">
-		<div class="ml1" onclick="location.href='https://links.freshtunes.com/ALkaR';">
-			<img src="https://raw.githubusercontent.com/landybisquit/documents/main/Catch%20the%20rythm-min.jpg" style="width: 20%; height: 20%" alt="catch the rythm">
-			<div class="txt" style="margin-left: 5%">
-			<h2><a href="https://links.freshtunes.com/ALkaR">Catch the Rythm</a></h2>
-			<p>Сингл в жанре SKA. Смешение джазовой, инструментальной и поп-музыки с элементами электроники. Полсностью выполнен на виртуальных интструментах: LABS и Flex. Особенность в том, что трек написан за 2 дня, а обложку приходилось исправлять 3 раза по требованию модерации. Кстати, цвет на заднем фоне был создан автоматически, при этом он хорошо сочетается с основным содержимым.</p>
+	<header>
+		<nav class="header">
+			<div class="section">
+				<button class="buttons 0">Работы</button>
+				<button class="buttons 1">Услуги</button>
 			</div>
-		</div>
-		<div class="ml2">
-		<img src="https://raw.githubusercontent.com/landybisquit/documents/main/begining%20finaly%20(1).jpg" style="width: 20%; height: 20%" alt="begining">
-			<div class="txt" style="margin-left: 5%">
-			<h2><a href="https://links.freshtunes.com/L4W8W">Begining</a></h2>
-			<p>Если до этого трека я лишь пытался делать музыку, то этот трек показал мне то, что я всё-таки могу не пытаться, а делать музыку. Я над ним довольно много работал, искал хорошие плагины, эффекты. С обложкой я тоже повозился, надеюсь, вы заметили, что это буквы из стекла в 3D, а учитывая имеющиеся мощности моего "калькулятора", это было долго.</p>
-			<p>Я знаю, что begining правильно как beginning, с двумя n.  Всё как надо.</p>
+			<div class="section">
+				<div class="tittle"><a class="nodecor" href="landybisquit.ru">Landy Bisquit</a></div>
 			</div>
+		</nav>
+	</header>
+	<section class="parallax">
+		<div class="nomove">
+			<img src="asset/background.webp" alt="background">
 		</div>
-	</div>
-</div>
-<footer>
-	<div class="section"><p>&#169; Landy Bisquit 2021</p></div>
-	<div class="section"><a href="mailto:landybisquiy@gmail.com" style="color: white; font-family: Segoe UI">landybisquit@gmail.com</a></div>
-</footer>
+		<div class="text"><h1>Landy Bisquit</h1></div>
+	</section>
+	<main>
+		<p class="desc">Я – Landy Bisquit, музыкант, дизайнер и web-разработчик из России. Здесь вы можете узнать обо мне и о моём деле, а так же что-нибудь послушать или приобрести.</p>
+		<div class="pages">
+			<section class="pages art">
+				<h2>Работы</h2>
+				<p></p>
+				<div class="mcontainer">
+					<div class="mbox">
+						<img src="asset/covers/bgn.webp" alt="cover of the «Begining»">
+						<div class="mdesc">
+							<div class="mlink"><a class="linkm" href="music.html?track=0">Слушать</a><p>2021</p></div>
+						</div>
+					</div>
+					<div class="mbox">
+						<img src="asset/covers/ctr.webp" alt="cover of the «Begining»">
+						<div class="mdesc">
+							<div class="mlink"><a class="linkm" href="music.html?track=1">Слушать</a><p>2021</p></div>
+						</div>
+					</div>
+				</div>
+				<div class="dcontainer">
+					<div class="dbox">
+						<div class="cover"></div>
+						<div class="ddesc">
+							<div class="dlink"><a class="linkd" href="musicaintegral.html">Подробнее о кейсе</a><p>2024</p></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="pages d-n">
+				<h2>Услуги</h2>
+				<div class="mcontainer">
+					<div class="mbox">
+						<h3>Разработка веб-сайта</h3>
+						<img src="asset/services/webdev.webp" alt="webdev">
+					</div>
+					<div class="mbox"></div>
+				</div>
+			</section>
+		</div>
+	</main>
 </body>
 </html>

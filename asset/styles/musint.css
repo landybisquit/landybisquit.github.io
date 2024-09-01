@@ -1,0 +1,37 @@
+.cover {
+    width: 100%;
+    height: calc(100vh - 40px);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+h1 {
+    align-content: center;
+    width: 100vw;
+    height: 60vh;
+
+    font-size: 2.1em;
+    font-weight: 900;
+    
+    color: #0E0C0C;
+    background: linear-gradient(
+        rgba(143, 199, 255, 0.95),
+        rgba(143, 199, 255, 0.05)),
+        url(../covers/cover.webp)
+        top/cover;
+}
+
+.cover p {
+    min-height: calc(40vh - 40px);
+    width: 70%;
+
+    align-content: center;
+
+    font-family: Source Sans Pro, sans-serif;
+    text-align: center;
+
+    color: white;
+}
