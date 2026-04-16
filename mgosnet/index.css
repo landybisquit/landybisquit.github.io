@@ -1,0 +1,847 @@
+/* ═══════════════════════════════════════════════════════
+   TOKENS
+════════════════════════════════════════════════════════ */
+:root {
+	--void: #03050f;
+	--deep: #060a1a;
+	--surface: #0a1128;
+	--panel: #0d1630;
+	--line: #162040;
+	--grid: #0e1a38;
+	--muted: #3a4d6e;
+	--body: #8ba8cc;
+	--head: #d6e8ff;
+	--cyan: #00e5ff;
+	--cyan-dim: #00435c;
+	--cyan-glow: rgba(0, 229, 255, 0.18);
+	--purple: #7b5ea7;
+	--purple-dim: #2a1f40;
+	--star: rgba(255, 255, 255, 0.7);
+	--radius: 3px;
+	--feed: 700px;
+	--mono: "Space Mono", monospace;
+	--display: "Syne", sans-serif;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESET
+════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+img,
+video {
+	display: block;
+	max-width: 100%;
+}
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+	font: inherit;
+}
+
+/* ═══════════════════════════════════════════════════════
+   STAR FIELD  (CSS-only, pseudo-random via box-shadow)
+════════════════════════════════════════════════════════ */
+body {
+	background: var(--void);
+	color: var(--body);
+	font-family: var(--display);
+	font-size: 15px;
+	line-height: 1.7;
+	min-height: 100vh;
+	overflow-x: hidden;
+	position: relative;
+}
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		radial-gradient(
+			ellipse 80% 60% at 70% 10%,
+			rgba(60, 30, 120, 0.35) 0%,
+			transparent 70%
+		),
+		radial-gradient(
+			ellipse 50% 40% at 10% 80%,
+			rgba(0, 60, 100, 0.3) 0%,
+			transparent 70%
+		);
+}
+/* Звёзды — слой 1 (мелкие) */
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+	background-image:
+		radial-gradient(1px 1px at 8% 6%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 14% 18%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 23% 3%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 35% 25%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 43% 10%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 52% 2%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 61% 15%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 72% 8%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 81% 22%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 90% 4%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 5% 40%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 17% 55%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 29% 48%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 47% 60%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 64% 38%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 76% 52%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 88% 44%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 3% 75%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 20% 82%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 38% 70%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 55% 88%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 67% 76%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 84% 91%, var(--star) 0%, transparent 100%),
+		radial-gradient(1px 1px at 93% 68%, var(--star) 0%, transparent 100%),
+		radial-gradient(
+			1.5px 1.5px at 30% 35%,
+			rgba(255, 255, 255, 0.9) 0%,
+			transparent 100%
+		),
+		radial-gradient(
+			1.5px 1.5px at 58% 20%,
+			rgba(255, 255, 255, 0.9) 0%,
+			transparent 100%
+		),
+		radial-gradient(
+			1.5px 1.5px at 78% 65%,
+			rgba(255, 255, 255, 0.9) 0%,
+			transparent 100%
+		),
+		radial-gradient(
+			2px 2px at 12% 30%,
+			rgba(180, 220, 255, 0.8) 0%,
+			transparent 100%
+		),
+		radial-gradient(
+			2px 2px at 50% 50%,
+			rgba(200, 180, 255, 0.8) 0%,
+			transparent 100%
+		),
+		radial-gradient(
+			2px 2px at 95% 85%,
+			rgba(180, 220, 255, 0.8) 0%,
+			transparent 100%
+		);
+}
+
+/* Всё содержимое поверх звёзд */
+.masthead,
+.feed {
+	position: relative;
+	z-index: 1;
+}
+
+/* ═══════════════════════════════════════════════════════
+   MASTHEAD
+════════════════════════════════════════════════════════ */
+.masthead {
+	border-bottom: 1px solid var(--line);
+	padding: 0 28px;
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 24px;
+	background: linear-gradient(
+		to bottom,
+		rgba(6, 10, 26, 0.98),
+		rgba(6, 10, 26, 0.85)
+	);
+	backdrop-filter: blur(12px);
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+.masthead-left {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding: 18px 0;
+}
+
+/* Орбитальный логотип */
+.logo-orbit {
+	position: relative;
+	width: 42px;
+	height: 42px;
+	flex-shrink: 0;
+}
+.logo-orbit svg {
+	width: 100%;
+	height: 100%;
+}
+@keyframes spin-slow {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes spin-rev {
+	to {
+		transform: rotate(-360deg);
+	}
+}
+.orbit-ring1 {
+	animation: spin-slow 8s linear infinite;
+	transform-origin: center;
+}
+.orbit-ring2 {
+	animation: spin-rev 5s linear infinite;
+	transform-origin: center;
+}
+
+.masthead-brand {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.brand-name {
+	font-family: var(--display);
+	font-size: 1.55rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	color: var(--head);
+	line-height: 1;
+}
+.brand-name em {
+	font-style: normal;
+	color: var(--cyan);
+	text-shadow:
+		0 0 12px var(--cyan),
+		0 0 28px rgba(0, 229, 255, 0.4);
+}
+.brand-sub {
+	font-family: var(--mono);
+	font-size: 0.6rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+.masthead-right {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+.hud-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 1px;
+}
+.hud-label {
+	font-family: var(--mono);
+	font-size: 0.58rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.hud-value {
+	font-family: var(--mono);
+	font-size: 0.78rem;
+	color: var(--cyan);
+}
+#live-time {
+	min-width: 5.5ch;
+	text-align: right;
+}
+
+/* Мигающий индикатор LIVE */
+.live-dot {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--mono);
+	font-size: 0.62rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #ff4b6e;
+}
+.live-dot::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: #ff4b6e;
+	box-shadow: 0 0 8px #ff4b6e;
+	animation: blink 1.2s ease-in-out infinite;
+}
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.2;
+	}
+}
+
+/* ═══════════════════════════════════════════════════════
+   FEED
+════════════════════════════════════════════════════════ */
+.feed {
+	max-width: var(--feed);
+	margin: 0 auto;
+	padding: 52px 24px 100px;
+	display: flex;
+	flex-direction: column;
+	gap: 56px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   POST BASE
+════════════════════════════════════════════════════════ */
+.post {
+	position: relative;
+	background: rgba(10, 17, 40, 0.7);
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	padding: 28px;
+	backdrop-filter: blur(8px);
+	transition:
+		border-color 0.3s,
+		box-shadow 0.3s;
+}
+.post:hover {
+	border-color: rgba(0, 229, 255, 0.25);
+	box-shadow:
+		0 0 32px rgba(0, 229, 255, 0.06),
+		0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* угловые засечки HUD */
+.post::before,
+.post::after {
+	content: "";
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	border-color: var(--cyan);
+	border-style: solid;
+	opacity: 0.5;
+}
+.post::before {
+	top: -1px;
+	left: -1px;
+	border-width: 1px 0 0 1px;
+}
+.post::after {
+	bottom: -1px;
+	right: -1px;
+	border-width: 0 1px 1px 0;
+}
+
+.post-meta {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 18px;
+}
+.post-type {
+	font-family: var(--mono);
+	font-size: 0.62rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--void);
+	background: var(--cyan);
+	padding: 3px 9px;
+	border-radius: 2px;
+	font-weight: 700;
+}
+.post-type.purple {
+	background: #a07cd4;
+	color: var(--void);
+}
+.post-type.teal {
+	background: #2dd4bf;
+	color: var(--void);
+}
+.post-type.rose {
+	background: #fb7185;
+	color: var(--void);
+}
+.post-date {
+	font-family: var(--mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.06em;
+	color: var(--muted);
+}
+.post-id {
+	margin-left: auto;
+	font-family: var(--mono);
+	font-size: 0.6rem;
+	color: var(--muted);
+	letter-spacing: 0.1em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   1. ФОТО
+════════════════════════════════════════════════════════ */
+.photo-post .photo-wrap {
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	border: 1px solid var(--line);
+}
+.photo-post img {
+	width: 100%;
+	display: block;
+	transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.photo-post .photo-wrap:hover img {
+	transform: scale(1.03);
+}
+
+/* сканлайн-оверлей */
+.photo-wrap::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		to bottom,
+		transparent 0px,
+		transparent 3px,
+		rgba(0, 0, 0, 0.07) 3px,
+		rgba(0, 0, 0, 0.07) 4px
+	);
+	pointer-events: none;
+}
+
+.photo-post figcaption {
+	margin-top: 16px;
+	font-size: 0.9rem;
+	color: var(--body);
+	line-height: 1.6;
+	padding-left: 12px;
+	border-left: 2px solid var(--cyan-dim);
+	font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════
+   2. ЛОНГРИД
+════════════════════════════════════════════════════════ */
+.longread-title {
+	font-family: var(--display);
+	font-size: clamp(1.3rem, 3.5vw, 1.9rem);
+	font-weight: 700;
+	color: var(--head);
+	line-height: 1.25;
+	margin-bottom: 20px;
+}
+
+.longread-body {
+	position: relative;
+}
+
+.longread-text {
+	font-size: 0.93rem;
+	line-height: 1.9;
+	color: var(--body);
+}
+.longread-text p {
+	margin-bottom: 1.1em;
+}
+.longread-text p:last-child {
+	margin-bottom: 0;
+}
+
+.longread-body.collapsed .longread-text {
+	max-height: 15em;
+	overflow: hidden;
+}
+.longread-fade {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 90px;
+	background: linear-gradient(to bottom, transparent, rgba(10, 17, 40, 0.97));
+	pointer-events: none;
+	transition: opacity 0.4s;
+}
+.longread-body:not(.collapsed) .longread-fade {
+	opacity: 0;
+}
+
+.longread-toggle {
+	margin-top: 16px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-family: var(--mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--cyan);
+	border: 1px solid var(--cyan-dim);
+	padding: 7px 14px;
+	border-radius: 3px;
+	transition:
+		background 0.2s,
+		color 0.2s,
+		border-color 0.2s,
+		box-shadow 0.2s;
+}
+.longread-toggle:hover {
+	background: var(--cyan-glow);
+	border-color: var(--cyan);
+	box-shadow: 0 0 14px rgba(0, 229, 255, 0.2);
+}
+.longread-toggle svg {
+	transition: transform 0.35s;
+}
+.longread-toggle.expanded svg {
+	transform: rotate(180deg);
+}
+
+/* ═══════════════════════════════════════════════════════
+   ЛОНГРИД — ВСТРОЕННЫЕ МЕДИА
+   Используйте внутри .longread-text:
+     <figure class="lr-media">          ← обёртка
+       <img src="...">  или  <video>    ← контент
+       <figcaption>...</figcaption>     ← подпись (опционально)
+     </figure>
+   Модификаторы ширины (добавить к <figure>):
+     lr-media--wide   → на всю ширину поста (по умолчанию)
+     lr-media--half   → 55% ширины, прижато к центру
+     lr-media--left   → 42%, текст обтекает справа
+     lr-media--right  → 42%, текст обтекает слева
+════════════════════════════════════════════════════════ */
+.longread-text .lr-media {
+	margin: 1.6em 0;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	background: var(--surface);
+}
+.longread-text .lr-media img,
+.longread-text .lr-media video {
+	width: 100%;
+	display: block;
+	border-radius: 3px 3px 0 0;
+}
+.longread-text .lr-media video {
+	max-height: 380px;
+	object-fit: contain;
+	background: #000;
+}
+.longread-text .lr-media figcaption {
+	padding: 9px 14px;
+	font-size: 0.78rem;
+	font-style: normal;
+	color: var(--muted);
+	font-family: var(--mono);
+	letter-spacing: 0.04em;
+	border-top: 1px solid var(--line);
+	border-left: none;
+	padding-left: 14px;
+}
+/* сканлайн на встроенных фото */
+.longread-text .lr-media {
+	position: relative;
+}
+.longread-text .lr-media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		to bottom,
+		transparent 0px,
+		transparent 3px,
+		rgba(0, 0, 0, 0.06) 3px,
+		rgba(0, 0, 0, 0.06) 4px
+	);
+	pointer-events: none;
+}
+
+/* — Варианты размещения — */
+.longread-text .lr-media--half {
+	max-width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.longread-text .lr-media--left {
+	float: left;
+	width: 42%;
+	margin: 0.4em 1.4em 1em 0;
+}
+.longread-text .lr-media--right {
+	float: right;
+	width: 42%;
+	margin: 0.4em 0 1em 1.4em;
+}
+/* сброс float после блока */
+.longread-text::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* видео с кнопкой полного экрана прямо в лонгриде */
+.longread-text .lr-media .lr-video-wrap {
+	position: relative;
+}
+.longread-text .lr-media .lr-video-wrap .video-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 8px 12px;
+	background: linear-gradient(to top, rgba(3, 5, 15, 0.85), transparent);
+	display: flex;
+	justify-content: flex-end;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.25s;
+}
+.longread-text .lr-media .lr-video-wrap:hover .video-overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* ═══════════════════════════════════════════════════════
+   3. КАРУСЕЛЬ
+════════════════════════════════════════════════════════ */
+.carousel-wrap {
+	position: relative;
+	overflow: hidden;
+	border-radius: 4px;
+	border: 1px solid var(--line);
+	user-select: none;
+}
+.carousel-track {
+	display: flex;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.carousel-track img {
+	flex: 0 0 100%;
+	width: 100%;
+	object-fit: cover;
+	max-height: 500px;
+}
+/* сканлайн */
+.carousel-wrap::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: repeating-linear-gradient(
+		to bottom,
+		transparent 0px,
+		transparent 3px,
+		rgba(0, 0, 0, 0.07) 3px,
+		rgba(0, 0, 0, 0.07) 4px
+	);
+	pointer-events: none;
+	z-index: 2;
+}
+.carousel-btn {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 38px;
+	height: 38px;
+	background: rgba(6, 10, 26, 0.8);
+	border: 1px solid var(--line);
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--body);
+	backdrop-filter: blur(6px);
+	transition:
+		background 0.2s,
+		color 0.2s,
+		border-color 0.2s,
+		box-shadow 0.2s;
+	z-index: 3;
+}
+.carousel-btn:hover {
+	background: var(--cyan-glow);
+	border-color: var(--cyan);
+	color: var(--cyan);
+	box-shadow: 0 0 12px rgba(0, 229, 255, 0.25);
+}
+.carousel-prev {
+	left: 12px;
+}
+.carousel-next {
+	right: 12px;
+}
+
+.carousel-hud {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 8px 12px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: linear-gradient(to top, rgba(3, 5, 15, 0.8), transparent);
+	z-index: 3;
+}
+.carousel-dots {
+	display: flex;
+	gap: 6px;
+}
+.carousel-dot {
+	width: 18px;
+	height: 2px;
+	background: rgba(139, 168, 204, 0.3);
+	border-radius: 2px;
+	transition:
+		background 0.25s,
+		transform 0.25s;
+}
+.carousel-dot.active {
+	background: var(--cyan);
+	box-shadow: 0 0 6px var(--cyan);
+}
+.carousel-counter-hud {
+	font-family: var(--mono);
+	font-size: 0.65rem;
+	color: var(--body);
+	letter-spacing: 0.1em;
+}
+
+.carousel-post .carousel-caption {
+	margin-top: 16px;
+	font-size: 0.9rem;
+	color: var(--body);
+	line-height: 1.6;
+	padding-left: 12px;
+	border-left: 2px solid var(--purple-dim);
+	font-style: italic;
+	border-left-color: #5b3f7e;
+}
+
+/* ═══════════════════════════════════════════════════════
+   4. ВИДЕО
+════════════════════════════════════════════════════════ */
+.video-wrap {
+	position: relative;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid var(--line);
+	background: #000;
+}
+.video-wrap video {
+	width: 100%;
+	display: block;
+	max-height: 480px;
+	object-fit: contain;
+	background: #000;
+}
+.video-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 10px 14px;
+	background: linear-gradient(to top, rgba(3, 5, 15, 0.85), transparent);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	opacity: 0;
+	transition: opacity 0.25s;
+	pointer-events: none;
+}
+.video-wrap:hover .video-overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+.video-fullscreen-btn {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--mono);
+	font-size: 0.62rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--body);
+	border: 1px solid rgba(139, 168, 204, 0.25);
+	padding: 5px 10px;
+	border-radius: 3px;
+	backdrop-filter: blur(4px);
+	background: rgba(6, 10, 26, 0.5);
+	transition:
+		color 0.2s,
+		border-color 0.2s,
+		background 0.2s,
+		box-shadow 0.2s;
+}
+.video-fullscreen-btn:hover {
+	color: var(--cyan);
+	border-color: var(--cyan);
+	background: var(--cyan-glow);
+	box-shadow: 0 0 12px rgba(0, 229, 255, 0.2);
+}
+.video-post figcaption {
+	margin-top: 16px;
+	font-size: 0.9rem;
+	color: var(--body);
+	line-height: 1.6;
+	padding-left: 12px;
+	border-left: 2px solid #7b3040;
+	font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════
+   ГОРИЗОНТАЛЬНЫЙ ДЕЛИТЕЛЬ МЕЖДУ ПОСТАМИ
+════════════════════════════════════════════════════════ */
+.feed-divider {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--muted);
+	font-family: var(--mono);
+	font-size: 0.6rem;
+	letter-spacing: 0.14em;
+}
+.feed-divider::before,
+.feed-divider::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: linear-gradient(
+		to right,
+		transparent,
+		var(--line),
+		transparent
+	);
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCROLLBAR
+════════════════════════════════════════════════════════ */
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-track {
+	background: var(--void);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--line);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--muted);
+}

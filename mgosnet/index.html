@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>МГОСNet — МежГалактическая Орбитальная Станция</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			@import url("index.css");
+		</style>
+		<script defer src="index.js"></script>
+	</head>
+	<body>
+		<header class="masthead">
+			<div class="masthead-left">
+				<!-- Орбитальный логотип -->
+				<div class="logo-orbit">
+					<svg
+						viewBox="0 0 42 42"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<!-- ядро -->
+						<circle
+							cx="21"
+							cy="21"
+							r="4"
+							fill="#00e5ff"
+							opacity=".9"
+						/>
+						<circle cx="21" cy="21" r="2" fill="#fff" />
+						<!-- внутреннее свечение -->
+						<circle
+							cx="21"
+							cy="21"
+							r="6"
+							stroke="#00e5ff"
+							stroke-width=".5"
+							opacity=".4"
+						/>
+						<!-- кольцо 1 (наклонённая эллипс) -->
+						<g class="orbit-ring1">
+							<ellipse
+								cx="21"
+								cy="21"
+								rx="14"
+								ry="6"
+								stroke="#00e5ff"
+								stroke-width=".8"
+								opacity=".6"
+								stroke-dasharray="3 2"
+							/>
+							<!-- спутник на кольце 1 -->
+							<circle
+								cx="35"
+								cy="21"
+								r="1.5"
+								fill="#00e5ff"
+								opacity=".9"
+							/>
+						</g>
+						<!-- кольцо 2 (другой угол) -->
+						<g class="orbit-ring2">
+							<ellipse
+								cx="21"
+								cy="21"
+								rx="9"
+								ry="16"
+								stroke="#a07cd4"
+								stroke-width=".8"
+								opacity=".5"
+								stroke-dasharray="2 3"
+							/>
+							<!-- спутник на кольце 2 -->
+							<circle
+								cx="21"
+								cy="5"
+								r="1.2"
+								fill="#a07cd4"
+								opacity=".9"
+							/>
+						</g>
+					</svg>
+				</div>
+
+				<div class="masthead-brand">
+					<div class="brand-name">МГО<em>С</em>Net</div>
+					<div class="brand-sub">
+						Межгалактическая обитаемая станция - лента
+					</div>
+				</div>
+			</div>
+
+			<div class="masthead-right">
+				<div class="hud-stat">
+					<span class="hud-label">Дата</span>
+					<span class="hud-value" id="today-date">—</span>
+				</div>
+				<div class="hud-stat">
+					<span class="hud-label">Время UTC</span>
+					<span class="hud-value" id="live-time">--:--:--</span>
+				</div>
+				<span class="live-dot">Online</span>
+			</div>
+		</header>
+
+		<!-- ════════════════════════════════════════════════════════
+     FEED  ← добавляйте посты сюда
+═════════════════════════════════════════════════════════ -->
+
+		<main class="feed" id="feed">
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">24.03.2026 · 20:14</span>
+					<span class="post-id">#VID-0008</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/union.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						//Материал подготовила Пигаричева Олеся
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">24.03.2026 · 20:00</span>
+					<span class="post-id">#VID-0007</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/guitar.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						Вечер гитар - одно из самых чудесных событий на АИ. <br>
+						//Зобнина Екатерина
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">24.03.2026 · 19:45</span>
+					<span class="post-id">#VID-0006</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/lepka.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						Обычные люди: *лепят из снега снеговиков*<br>
+						Экипажи: *лепят из снега ракеты* <br>
+						//Материал подготовила Пигаричева Олеся
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 3 — КАРУСЕЛЬ ФОТОГРАФИЙ
+       ║  • Добавляйте/удаляйте <img> внутри .carousel-track
+       ║  • Точки и счётчик генерируются автоматически
+       ║  • Работает свайп на мобильных устройствах
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post carousel-post">
+				<div class="post-meta">
+					<span class="post-type teal">Галерея</span>
+					<span class="post-date">24.03.2026 · 19:33</span>
+					<span class="post-id">#GAL-0010</span>
+				</div>
+				<div class="carousel-wrap" data-carousel>
+					<div class="carousel-track">
+						<img src="media/vibes_1.jpg" alt="" loading="lazy" />
+						<img src="media/vibes_2.jpg" alt="" loading="lazy" />
+						<img src="media/vibes_3.jpg" alt="" loading="lazy" />
+						<img src="media/vibes_4.jpg" alt="" loading="lazy" />
+						<img src="media/vibes_5.jpg" alt="" loading="lazy" />
+						<img src="media/vibes_6.jpg" alt="" loading="lazy" />
+					</div>
+					<button
+						class="carousel-btn carousel-prev"
+						aria-label="Предыдущий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M9 2.5L4.5 7L9 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-next"
+						aria-label="Следующий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M5 2.5L9.5 7L5 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<div class="carousel-hud">
+						<div class="carousel-dots"></div>
+						<span class="carousel-counter-hud"></span>
+					</div>
+				</div>
+				<p class="carousel-caption">
+					//Материал подготовил бортовой секретарь экипажа "Невесомый движ"
+				</p>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 3 — КАРУСЕЛЬ ФОТОГРАФИЙ
+       ║  • Добавляйте/удаляйте <img> внутри .carousel-track
+       ║  • Точки и счётчик генерируются автоматически
+       ║  • Работает свайп на мобильных устройствах
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post carousel-post">
+				<div class="post-meta">
+					<span class="post-type teal">Галерея</span>
+					<span class="post-date">24.03.2026 · 19:25</span>
+					<span class="post-id">#GAL-0009</span>
+				</div>
+				<div class="carousel-wrap" data-carousel>
+					<div class="carousel-track">
+						<img src="media/kanat_1.jpg" alt="" loading="lazy" />
+						<img src="media/kanat_2.jpg" alt="" loading="lazy" />
+						<img src="media/kanat_3.jpg" alt="" loading="lazy" />
+					</div>
+					<button
+						class="carousel-btn carousel-prev"
+						aria-label="Предыдущий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M9 2.5L4.5 7L9 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-next"
+						aria-label="Следующий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M5 2.5L9.5 7L5 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<div class="carousel-hud">
+						<div class="carousel-dots"></div>
+						<span class="carousel-counter-hud"></span>
+					</div>
+				</div>
+				<p class="carousel-caption">
+					Сегодня у нас был канат! Все экипажи очень любят это мероприятие и даже бьются за прохождение в финал этого прекрасного события.<br>
+					//Зобнина Екатерина
+				</p>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 3 — КАРУСЕЛЬ ФОТОГРАФИЙ
+       ║  • Добавляйте/удаляйте <img> внутри .carousel-track
+       ║  • Точки и счётчик генерируются автоматически
+       ║  • Работает свайп на мобильных устройствах
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post carousel-post">
+				<div class="post-meta">
+					<span class="post-type teal">Галерея</span>
+					<span class="post-date">24.03.2026 · 19:17</span>
+					<span class="post-id">#GAL-0008</span>
+				</div>
+				<div class="carousel-wrap" data-carousel>
+					<div class="carousel-track">
+						<img src="media/t_o_1.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_2.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_3.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_4.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_5.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_6.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_7.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_8.jpg" alt="" loading="lazy" />
+						<img src="media/t_o_9.jpg" alt="" loading="lazy" />
+					</div>
+					<button
+						class="carousel-btn carousel-prev"
+						aria-label="Предыдущий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M9 2.5L4.5 7L9 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-next"
+						aria-label="Следующий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M5 2.5L9.5 7L5 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<div class="carousel-hud">
+						<div class="carousel-dots"></div>
+						<span class="carousel-counter-hud"></span>
+					</div>
+				</div>
+				<p class="carousel-caption">
+					//материал подготовили бортовые секретари экипажей "Звездная индустрия" и "Стелла"
+				</p>
+			</article>
+
+			<div class="feed-divider">// ЛОНГРИД //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 2 — ЛОНГРИД
+       ║  • Каждый лонгрид должен иметь уникальный id (lr-1, lr-2…)
+       ║  • Укажите id дважды: id="lr-N" и onclick="toggleLongread('lr-N', this)"
+       ║  • Текст — обычные абзацы <p> внутри .longread-text
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post longread-post">
+				<div class="post-meta">
+					<span class="post-type purple">Интервью</span>
+					<span class="post-date">22.03.2026 · 17:52</span>
+					<span class="post-id">#ART-0005</span>
+				</div>
+				<h2 class="longread-title">Пресс-конференция со сбора конфликтологов 🔮</h2>
+				<div class="longread-body collapsed" id="lr-5">
+					<div class="longread-text">
+						<figure class="lr-media--right">
+							<img
+								src="media/relax_room.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Комната релаксации
+							</figcaption>
+						</figure>
+						<p>
+							- Нравится ли вам ваша профессия?<br>
+							(1) – Мне очень нравится, мы вчера сделали вот такую красоту.<br>
+							(2) – А я занималась составлением игр для объединения экипажа. Я в первый раз сюда пришла, и я прям очень сильно расслабилась. 
+						</p>
+						<p>
+							- Как проходят ваши сборы? <br>
+							(1) – На днях мы рисовали мотивирующие картинки для участников выезда. <br>
+							(2) – А также мы придумывали игры на сплочение. 
+
+						</p>
+						<p>
+							- Что лучше сделать, чтобы избежать конфликта? <br>
+							(1) – Не ругаться. <br>
+							(2) – Искать компромисс с другим человеком, слушать его мнение. 
+						</p>
+						<p>
+							- Почему из всех профессий, что были, вы выбрали именно конфликтолога? <br>
+							(1) – В экипаж я попала ближе к выезду, именно поэтому я выбрала оставшуюся профессию, это был как раз конфликтолог. <br>
+							(2) – Мне интересна тема конфликтологии, и я бы не хотел, чтобы в моём экипаже происходили какие-либо конфликты. 
+						</p>
+						<p>
+							- Как именно вы хотите, чтобы ваши "весёлые картинки" функционировали? <br>
+							(1) – Я хочу, чтобы на неё смотрели, и у людей поднималось настроение. <br>
+							(2) – Я с ней полностью согласна.
+						</p>
+						<p>
+							- Почему человек этой профессии важен для экипажа? <br>
+							– Я считаю, что данная профессия крайне важна для экипажа, поскольку очень тяжело на выезде обойтись без конфликтов, поэтому конфликтолог помогает ак-то эти конфликты урегулировать либо вовсе предотвратить. 
+						</p>
+						<p>
+							- Для чего нужно было делать распределение по комнатам, возле двери бумажки которые. <br>
+– Чтобы проходящим мимо людям было удобно посмотреть, кто же живёт в этой комнате. Ну, посудите сами, это удобно. Вы идёте по коридору и сразу знаете, кто живёт в этой комнате. 
+						</p>
+						<p>
+							- Что вы обычно делаете на сборах? <br>
+– На сборах мы обычно делаем все, чтобы поддержать эмоциональное состояние участников миссии. 
+						</p>
+						<p>
+							- Как ваша "комната релаксации" должна функционировать? Расскажите. <br>
+– В нашей комнате можно отдохнуть и побыть наедине с собой. Также снять стресс разными антистрессами, которые здесь находятся. 
+						</p>
+						<p>
+							Как контактировать с закрытыми людьми? <br>
+– Стараться найти с ними общий язык, возможно поговорить с ними лично вне экипажа. 
+						</p>
+						<p>
+							//материал подготовили бортовые секретари экипажей "Громозека" и "На связи"
+						</p>
+						<!-- ═══ ВСТРОЕННОЕ ФОТО (на всю ширину) ═══ -->
+						<!--Скопируйте <figure class="lr-media"> и вставьте между любыми <p>.
+             Классы размера: (нет) = полная ширина | lr-media--half | lr-media--left | lr-media--right-->
+						<!--<figure class="lr-media">
+							<img
+								src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
+								alt="Сетевая визуализация данных"
+							/>
+							<figcaption>
+								// РИС. 1 — Визуализация потоков данных
+								мегаполиса в реальном времени. Источник: ETH
+								Zürich Urban Data Lab, 2025
+							</figcaption>
+						</figure>-->
+
+						
+
+						<!--═══ ВСТРОЕННОЕ ФОТО (обтекание справа) ═══ 
+						<figure class="lr-media lr-media--right">
+							<img
+								src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+								alt="Серверная стойка"
+							/>
+							<figcaption>// Серверный зал, ЦОД-7</figcaption>
+						</figure>-->
+
+						<!--═══ ВСТРОЕННОЕ ВИДЕО ═══-->
+						<!--Замените src в <source> на путь к своему файлу.-->
+						<!--<figure class="lr-media">
+							<div class="lr-video-wrap">
+								<video controls preload="metadata">
+									<source
+										src="https://www.w3schools.com/html/mov_bbb.mp4"
+										type="video/mp4"
+									/>
+								</video>
+								<div class="video-overlay">
+									<button
+										class="video-fullscreen-btn"
+										onclick="goFullscreen(this)"
+										aria-label="На весь экран"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+										>
+											<path
+												d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+												stroke="currentColor"
+												stroke-width="1.4"
+												stroke-linecap="round"
+											/>
+										</svg>
+										На весь экран
+									</button>
+								</div>
+							</div>
+							<figcaption>
+								// ЗАПИСЬ — демонстрация системы архивного
+								зондирования данных. Замените ссылку на свой
+								файл.
+							</figcaption>
+						</figure>-->
+					</div>
+					<div class="longread-fade"></div>
+				</div>
+				<button
+					class="longread-toggle"
+					onclick="toggleLongread('lr-5', this)"
+				>
+					<svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+						<path
+							d="M2 4.5L6.5 9L11 4.5"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+						/>
+					</svg>
+					Развернуть
+				</button>
+			</article>
+
+			<div class="feed-divider">// ЛОНГРИД //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 2 — ЛОНГРИД
+       ║  • Каждый лонгрид должен иметь уникальный id (lr-1, lr-2…)
+       ║  • Укажите id дважды: id="lr-N" и onclick="toggleLongread('lr-N', this)"
+       ║  • Текст — обычные абзацы <p> внутри .longread-text
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post longread-post">
+				<div class="post-meta">
+					<span class="post-type purple">Интервью</span>
+					<span class="post-date">23.03.2026 · 19:08</span>
+					<span class="post-id">#ART-0003</span>
+				</div>
+				<h2 class="longread-title">Пресс-конференция со сбора врачей 🩺</h2>
+				<div class="longread-body collapsed" id="lr-3">
+					<div class="longread-text">
+						<figure class="lr-media">
+							<div class="lr-video-wrap">
+								<video controls preload="metadata">
+									<source
+										src="media/medics.mp4"
+										type="video/mp4"
+									/>
+								</video>
+								<div class="video-overlay">
+									<button
+										class="video-fullscreen-btn"
+										onclick="goFullscreen(this)"
+										aria-label="На весь экран"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+										>
+											<path
+												d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+												stroke="currentColor"
+												stroke-width="1.4"
+												stroke-linecap="round"
+											/>
+										</svg>
+										На весь экран
+									</button>
+								</div>
+							</div>
+						</figure>
+						<p>
+							- Сколько времени вы учились, чтобы быть врачом?<br>
+							- Я считаю, что для того, чтобы быть врачом, недостаточно просто выучиться.
+							 Ты должен учиться и познавать что-то новое каждый день, 
+							 потому что не бывает идеальных врачей. Всегда есть то, 
+							 к чему можно стремиться, и каждый врач должен совершенствовать себя.<br><br>
+
+							- Правда ли, что в космосе все становятся выше?<br>
+							- Я не знаю, при чем тут врач, но, наверное, да.<br><br> 
+
+							- Лекарства в космосе действуют так же, как и на Земле?<br>
+							- без комментариев<br><br>
+
+							- Какая самая частая жалоба от своих экипажников?<br>
+							- Голова болит.<br><br>
+
+							- Что самое сложное в работе врача?<br>
+							- Выучить название всех лекарств.<br><br>
+
+							- Приходилось ли вам спасать чью-то жизнь прямо на орбите?<br>
+							- без комментариев<br><br>
+
+							- Если кто-то на борту серьезно заболеет, что вы будете делать?<br>
+							- Лечить.<br><br>
+
+							- Страшно ли брать на себя ответственность, когда до земли тысячи километров?<br>
+							- Нет, потому что быть врачом — это и есть призвание брать на себя ответственность
+							 за жизни других, и быть врачом — это быть готовым прийти на помощь 
+							 в любой момент, когда это понадобится твоему соэкипажнику.<br><br>
+
+							- Сможете ли вы сделать операцию в невесомости?<br>
+							- Сможем, а кто нет?<br><br>
+
+							- Бывают ли у врачей депрессия?<br>
+							- без комментариев
+						</p>
+						<p>
+							//Материал готовили секретари экипажей "Стелла" и "Звёздная индустрия"
+						</p>
+						<!-- ═══ ВСТРОЕННОЕ ФОТО (на всю ширину) ═══ -->
+						<!--Скопируйте <figure class="lr-media"> и вставьте между любыми <p>.
+             Классы размера: (нет) = полная ширина | lr-media--half | lr-media--left | lr-media--right-->
+						<!--<figure class="lr-media">
+							<img
+								src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
+								alt="Сетевая визуализация данных"
+							/>
+							<figcaption>
+								// РИС. 1 — Визуализация потоков данных
+								мегаполиса в реальном времени. Источник: ETH
+								Zürich Urban Data Lab, 2025
+							</figcaption>
+						</figure>-->
+
+						
+
+						<!--═══ ВСТРОЕННОЕ ФОТО (обтекание справа) ═══ 
+						<figure class="lr-media lr-media--right">
+							<img
+								src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+								alt="Серверная стойка"
+							/>
+							<figcaption>// Серверный зал, ЦОД-7</figcaption>
+						</figure>-->
+
+						<!--═══ ВСТРОЕННОЕ ВИДЕО ═══-->
+						<!--Замените src в <source> на путь к своему файлу.-->
+						<!--<figure class="lr-media">
+							<div class="lr-video-wrap">
+								<video controls preload="metadata">
+									<source
+										src="https://www.w3schools.com/html/mov_bbb.mp4"
+										type="video/mp4"
+									/>
+								</video>
+								<div class="video-overlay">
+									<button
+										class="video-fullscreen-btn"
+										onclick="goFullscreen(this)"
+										aria-label="На весь экран"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+										>
+											<path
+												d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+												stroke="currentColor"
+												stroke-width="1.4"
+												stroke-linecap="round"
+											/>
+										</svg>
+										На весь экран
+									</button>
+								</div>
+							</div>
+							<figcaption>
+								// ЗАПИСЬ — демонстрация системы архивного
+								зондирования данных. Замените ссылку на свой
+								файл.
+							</figcaption>
+						</figure>-->
+					</div>
+					<div class="longread-fade"></div>
+				</div>
+				<button
+					class="longread-toggle"
+					onclick="toggleLongread('lr-3', this)"
+				>
+					<svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+						<path
+							d="M2 4.5L6.5 9L11 4.5"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+						/>
+					</svg>
+					Развернуть
+				</button>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">22.03.2026 · 19:22</span>
+					<span class="post-id">#VID-0005</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/pakt_task_igrotekh.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						Даже невыполнимый пакт можно выполнить, если подойти к вопросу творчески
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 1 — ФОТО С ПОДПИСЬЮ
+       ║  • Скопируйте весь <article> для нового поста
+       ║  • Поменяйте src="" на путь/URL к своему фото
+       ║  • Отредактируйте <figcaption> и post-date
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post photo-post">
+				<div class="post-meta">
+					<span class="post-type">Фото</span>
+					<span class="post-date">23.03.2026 · 07:02</span>
+					<span class="post-id">#PHT-000</span>
+				</div>
+				<figure>
+					<div class="photo-wrap">
+						<img
+							src="media/developers.jpg"
+							alt=""
+							loading="lazy"
+						/>
+					</div>
+					<figcaption>
+						Игротехи работают для вас в любое время дня и ночи
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 3 — КАРУСЕЛЬ ФОТОГРАФИЙ
+       ║  • Добавляйте/удаляйте <img> внутри .carousel-track
+       ║  • Точки и счётчик генерируются автоматически
+       ║  • Работает свайп на мобильных устройствах
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post carousel-post">
+				<div class="post-meta">
+					<span class="post-type teal">Галерея</span>
+					<span class="post-date">22.03.2026 · 19:17</span>
+					<span class="post-id">#GAL-0007</span>
+				</div>
+				<div class="carousel-wrap" data-carousel>
+					<div class="carousel-track">
+						<img src="media/fashion_1.jpg" alt="" loading="lazy" />
+						<img src="media/fashion_2.jpg" alt="" loading="lazy" />
+						<img src="media/fashion_3.jpg" alt="" loading="lazy" />
+						<img src="media/fashion_4.jpg" alt="" loading="lazy" />
+						<img src="media/fashion_5.jpg" alt="" loading="lazy" />
+					</div>
+					<button
+						class="carousel-btn carousel-prev"
+						aria-label="Предыдущий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M9 2.5L4.5 7L9 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-next"
+						aria-label="Следующий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M5 2.5L9.5 7L5 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<div class="carousel-hud">
+						<div class="carousel-dots"></div>
+						<span class="carousel-counter-hud"></span>
+					</div>
+				</div>
+				<p class="carousel-caption">
+					На стиле <br />//Фортунатова Арина, экипаж "Космопс"
+				</p>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 2 — ЛОНГРИД
+       ║  • Каждый лонгрид должен иметь уникальный id (lr-1, lr-2…)
+       ║  • Укажите id дважды: id="lr-N" и onclick="toggleLongread('lr-N', this)"
+       ║  • Текст — обычные абзацы <p> внутри .longread-text
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post longread-post">
+				<div class="post-meta">
+					<span class="post-type teal">Фотоподборка</span>
+					<span class="post-date">22.03.2026 · 19:31</span>
+					<span class="post-id">#ART-0001</span>
+				</div>
+				<h2 class="longread-title">Я скучаю по Земле</h2>
+				<div class="longread-body collapsed" id="lr-2">
+					<div class="longread-text">
+						<!-- ═══ ВСТРОЕННОЕ ФОТО (на всю ширину) ═══ -->
+						<!--Скопируйте <figure class="lr-media"> и вставьте между любыми <p>.
+             Классы размера: (нет) = полная ширина | lr-media--half | lr-media--left | lr-media--right-->
+						<figure class="lr-media">
+							<img
+								src="media/miss_1.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Ракеты, на которых мы полетим домой
+							</figcaption>
+						</figure>
+
+						<figure class="lr-media">
+							<img
+								src="media/miss_2.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Ветка, привезённая с Земли, лежит на полочке в комнате
+							</figcaption>
+						</figure>
+						<figure class="lr-media">
+							<img
+								src="media/miss_3.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Так мы кормили птиц, пополняя кормушку
+							</figcaption>
+						</figure>
+						<figure class="lr-media">
+							<img
+								src="media/miss_4.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Как он лепил снеговика не Земле, когда только намтупила весна
+							</figcaption>
+						</figure>
+						<figure class="lr-media">
+							<img
+								src="media/miss_5.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Ростки вырощенной на Земле флоры
+							</figcaption>
+						</figure>
+						<figure class="lr-media">
+							<img
+								src="media/miss_6.jpg"
+								alt=""
+							/>
+							<figcaption>
+								Обычный вечер, который похож на земной
+							</figcaption>
+						</figure>
+						
+						<p>
+							//Коршунова Мария, экипаж "Стелла"
+						</p>
+
+						<!--═══ ВСТРОЕННОЕ ФОТО (обтекание справа) ═══ 
+						<figure class="lr-media lr-media--right">
+							<img
+								src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+								alt="Серверная стойка"
+							/>
+							<figcaption>// Серверный зал, ЦОД-7</figcaption>
+						</figure>-->
+
+						<!--═══ ВСТРОЕННОЕ ВИДЕО ═══-->
+						<!--Замените src в <source> на путь к своему файлу.-->
+						<!--<figure class="lr-media">
+							<div class="lr-video-wrap">
+								<video controls preload="metadata">
+									<source
+										src="https://www.w3schools.com/html/mov_bbb.mp4"
+										type="video/mp4"
+									/>
+								</video>
+								<div class="video-overlay">
+									<button
+										class="video-fullscreen-btn"
+										onclick="goFullscreen(this)"
+										aria-label="На весь экран"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+										>
+											<path
+												d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+												stroke="currentColor"
+												stroke-width="1.4"
+												stroke-linecap="round"
+											/>
+										</svg>
+										На весь экран
+									</button>
+								</div>
+							</div>
+							<figcaption>
+								// ЗАПИСЬ — демонстрация системы архивного
+								зондирования данных. Замените ссылку на свой
+								файл.
+							</figcaption>
+						</figure>-->
+					</div>
+					<div class="longread-fade"></div>
+				</div>
+				<button
+					class="longread-toggle"
+					onclick="toggleLongread('lr-2', this)"
+				>
+					<svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+						<path
+							d="M2 4.5L6.5 9L11 4.5"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+						/>
+					</svg>
+					Развернуть
+				</button>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">22.03.2026 · 19:22</span>
+					<span class="post-id">#VID-0004</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/gromozeka_eyes.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						А чьи глаза покорили вас?
+						<br />
+						//Кузнецова Елизавета, экипаж "Громозека"
+					</figcaption>
+				</figure>
+			</article>
+			
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 3 — КАРУСЕЛЬ ФОТОГРАФИЙ
+       ║  • Добавляйте/удаляйте <img> внутри .carousel-track
+       ║  • Точки и счётчик генерируются автоматически
+       ║  • Работает свайп на мобильных устройствах
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post carousel-post">
+				<div class="post-meta">
+					<span class="post-type teal">Галерея</span>
+					<span class="post-date">22.03.2026 · 19:17</span>
+					<span class="post-id">#GAL-0007</span>
+				</div>
+				<div class="carousel-wrap" data-carousel>
+					<div class="carousel-track">
+						<img src="media/vibe_0.jpg" alt="" loading="lazy" />
+						<img src="media/vibe_1.jpg" alt="" loading="lazy" />
+						<img src="media/vibe_2.jpg" alt="" loading="lazy" />
+						<img src="media/vibe_3.jpg" alt="" loading="lazy" />
+						<img src="media/vibe_4.jpg" alt="" loading="lazy" />
+						<img src="media/vibe_5.jpg" alt="" loading="lazy" />
+					</div>
+					<button
+						class="carousel-btn carousel-prev"
+						aria-label="Предыдущий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M9 2.5L4.5 7L9 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-next"
+						aria-label="Следующий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M5 2.5L9.5 7L5 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<div class="carousel-hud">
+						<div class="carousel-dots"></div>
+						<span class="carousel-counter-hud"></span>
+					</div>
+				</div>
+				<p class="carousel-caption">
+					У каждой игры свой вайб, у АИ 2026 вайб такой. <br />//Печёнкина Анна, экипаж "Оумуамуа"
+				</p>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">22.03.2026 · 19:02</span>
+					<span class="post-id">#VID-0003</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/tropa.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						Давайте узнаем, что думают о тропе наш экипаж! <br>
+						«Тропа лучшая за 4 выезда, расстроилась, что нет палатки. Очень рада, что разожгли костёр!» - <i>Полина Жирохова</i><br>
+						«Нормально, новые локации, интересные, достаточно лёгкие» - <i>Павел Ткачук</i><br>
+						«Офигенная тропа, 10 из 10!» - <i>Павел Попов</i>
+						<br />
+						//Зобнина Екатерина, экипаж "УПС"
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 1 — ФОТО С ПОДПИСЬЮ
+       ║  • Скопируйте весь <article> для нового поста
+       ║  • Поменяйте src="" на путь/URL к своему фото
+       ║  • Отредактируйте <figcaption> и post-date
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post photo-post">
+				<div class="post-meta">
+					<span class="post-type">Фото</span>
+					<span class="post-date">22.03.2026 · 19:00</span>
+					<span class="post-id">#PHT-0001</span>
+				</div>
+				<figure>
+					<div class="photo-wrap">
+						<img
+							src="media/fima.jpg"
+							alt="Фима снимает командирскую игру"
+							loading="lazy"
+						/>
+					</div>
+					<figcaption>
+						СМИ за работой
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// ЛОНГРИД //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 2 — ЛОНГРИД
+       ║  • Каждый лонгрид должен иметь уникальный id (lr-1, lr-2…)
+       ║  • Укажите id дважды: id="lr-N" и onclick="toggleLongread('lr-N', this)"
+       ║  • Текст — обычные абзацы <p> внутри .longread-text
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post longread-post">
+				<div class="post-meta">
+					<span class="post-type purple">Интервью</span>
+					<span class="post-date">22.03.2026 · 17:52</span>
+					<span class="post-id">#ART-0001</span>
+				</div>
+				<h2 class="longread-title">Секрет спортивного успеха 🎯</h2>
+				<div class="longread-body collapsed" id="lr-1">
+					<div class="longread-text">
+						<p>
+							💠Сегодня я взял интервью у экипажа "Стелла",
+							которому постоянно получается забирать 1 места в
+							спорте, в чем же их секрет победы? В этом вопросе
+							мне помог командир победного экипажа Ахметгареев
+							Тимур.
+						</p>
+						<p>
+							💠Со слов Тимура, в экипаже у Стеллы жесткая
+							дисциплина и четкий подбор участников под каждую
+							станцию. Они отбирают каждого участника таким
+							образом: 
+							<ol>
+								<li>Узнают задание станции</li>
+								<li>Решают, кто из участников экипажа сильнее всех в данном задании</li>
+								<li>Выполняют задание</li>
+							</ol> 
+							Придерживаясь такого алгоритма,
+							они проходят все станции на отлично. 
+						</p>
+						<p>
+							💠Цитирую слова
+							Тимура:"Мы очень сплоченная команда, с хорошей
+							дисциплиной, критическим мышлением и тактикой...".
+							Командир Стеллы еще подметил отличную
+							коммуникабельность экипажа, все члены не просто
+							стоят, а поддерживают свой экипаж, не допускают
+							того, чтобы кто-то просто стоял и ничего не делал.
+						</p>
+						<p>
+							💠Тимур сказал, что не собирается ослаблять хватку в
+							последующие дни, не смотря на то что в первые два
+							дня они забрали оба первых места. И ведь
+							действительно интересно, справится ли экипаж
+							"Стелла" и смогут ли они не отдавать первые места
+							другим экипажам? Пока ответить на этот вопрос
+							нельзя, но через пару дней мы сможем узнать ответ.<br>
+							//Экипаж Аврора
+						</p>
+
+						<!-- ═══ ВСТРОЕННОЕ ФОТО (на всю ширину) ═══ -->
+						<!--Скопируйте <figure class="lr-media"> и вставьте между любыми <p>.
+             Классы размера: (нет) = полная ширина | lr-media--half | lr-media--left | lr-media--right-->
+						<!--<figure class="lr-media">
+							<img
+								src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
+								alt="Сетевая визуализация данных"
+							/>
+							<figcaption>
+								// РИС. 1 — Визуализация потоков данных
+								мегаполиса в реальном времени. Источник: ETH
+								Zürich Urban Data Lab, 2025
+							</figcaption>
+						</figure>-->
+
+						
+
+						<!--═══ ВСТРОЕННОЕ ФОТО (обтекание справа) ═══ 
+						<figure class="lr-media lr-media--right">
+							<img
+								src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
+								alt="Серверная стойка"
+							/>
+							<figcaption>// Серверный зал, ЦОД-7</figcaption>
+						</figure>-->
+
+						<!--═══ ВСТРОЕННОЕ ВИДЕО ═══-->
+						<!--Замените src в <source> на путь к своему файлу.-->
+						<!--<figure class="lr-media">
+							<div class="lr-video-wrap">
+								<video controls preload="metadata">
+									<source
+										src="https://www.w3schools.com/html/mov_bbb.mp4"
+										type="video/mp4"
+									/>
+								</video>
+								<div class="video-overlay">
+									<button
+										class="video-fullscreen-btn"
+										onclick="goFullscreen(this)"
+										aria-label="На весь экран"
+									>
+										<svg
+											width="12"
+											height="12"
+											viewBox="0 0 12 12"
+											fill="none"
+										>
+											<path
+												d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+												stroke="currentColor"
+												stroke-width="1.4"
+												stroke-linecap="round"
+											/>
+										</svg>
+										На весь экран
+									</button>
+								</div>
+							</div>
+							<figcaption>
+								// ЗАПИСЬ — демонстрация системы архивного
+								зондирования данных. Замените ссылку на свой
+								файл.
+							</figcaption>
+						</figure>-->
+					</div>
+					<div class="longread-fade"></div>
+				</div>
+				<button
+					class="longread-toggle"
+					onclick="toggleLongread('lr-1', this)"
+				>
+					<svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+						<path
+							d="M2 4.5L6.5 9L11 4.5"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+						/>
+					</svg>
+					Развернуть
+				</button>
+			</article>
+
+			<div class="feed-divider">// МЕДИАПОТОК //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 3 — КАРУСЕЛЬ ФОТОГРАФИЙ
+       ║  • Добавляйте/удаляйте <img> внутри .carousel-track
+       ║  • Точки и счётчик генерируются автоматически
+       ║  • Работает свайп на мобильных устройствах
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post carousel-post">
+				<div class="post-meta">
+					<span class="post-type teal">Галерея</span>
+					<span class="post-date">21.03.2026 · 20:07</span>
+					<span class="post-id">#GAL-0007</span>
+				</div>
+				<div class="carousel-wrap" data-carousel>
+					<div class="carousel-track">
+						<img src="media/d1_1.jpg" alt="" loading="lazy" />
+						<img src="media/d1_2.jpg" alt="" loading="lazy" />
+						<img src="media/d1_3.jpg" alt="" loading="lazy" />
+						<img src="media/d1_4.jpg" alt="" loading="lazy" />
+						<img src="media/d1_5.jpg" alt="" loading="lazy" />
+						<img src="media/d1_6.jpg" alt="" loading="lazy" />
+					</div>
+					<button
+						class="carousel-btn carousel-prev"
+						aria-label="Предыдущий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M9 2.5L4.5 7L9 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<button
+						class="carousel-btn carousel-next"
+						aria-label="Следующий"
+					>
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 14 14"
+							fill="none"
+						>
+							<path
+								d="M5 2.5L9.5 7L5 11.5"
+								stroke="currentColor"
+								stroke-width="1.6"
+								stroke-linecap="round"
+							/>
+						</svg>
+					</button>
+					<div class="carousel-hud">
+						<div class="carousel-dots"></div>
+						<span class="carousel-counter-hud"></span>
+					</div>
+				</div>
+				<p class="carousel-caption">
+					Вот так прошли первые 2 дня нашей миссии. <br />//Коршунова
+					Мария, экипаж "Стелла"
+				</p>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">21.03.2026 · 19:47</span>
+					<span class="post-id">#VID-0003</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source src="media/flag_up.mp4" type="video/mp4" />
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>
+						Новая игра, новые экипажи, новые люди, новые игротехи.
+						Что будет Дальше? Что случится с нашими экипажами на
+						миссии посмотрим далее! Будем держать всех в курсе
+						событий. <br />
+						//Зобнина Екатерина, экипаж "УПС"
+					</figcaption>
+				</figure>
+			</article>
+
+			<div class="feed-divider">// ВИДЕОАРХИВ //</div>
+
+			<!-- ╔══════════════════════════════════════════════════════
+       ║  ТИП 4 — ВИДЕО С ПОДПИСЬЮ
+       ║  • Замените src="" в <source> на путь к файлу
+       ║  • Поддерживаются mp4 и webm
+       ║  • Кнопка «На весь экран» появляется при наведении
+       ╚════════════════════════════════════════════════════ -->
+			<article class="post video-post">
+				<div class="post-meta">
+					<span class="post-type rose">Видео</span>
+					<span class="post-date">21.03.2026 · 19:57</span>
+					<span class="post-id">#VID-0003</span>
+				</div>
+				<figure>
+					<div class="video-wrap">
+						<video controls preload="metadata">
+							<!-- Замените src на путь к своему видеофайлу -->
+							<source
+								src="media/pakt_chay.mp4"
+								type="video/mp4"
+							/>
+							Браузер не поддерживает воспроизведение видео.
+						</video>
+						<div class="video-overlay">
+							<button
+								class="video-fullscreen-btn"
+								onclick="goFullscreen(this)"
+								aria-label="На весь экран"
+							>
+								<svg
+									width="12"
+									height="12"
+									viewBox="0 0 12 12"
+									fill="none"
+								>
+									<path
+										d="M1 1h3M1 1v3M11 1h-3M11 1v3M1 11h3M1 11v-3M11 11h-3M11 11v-3"
+										stroke="currentColor"
+										stroke-width="1.4"
+										stroke-linecap="round"
+									/>
+								</svg>
+								На весь экран
+							</button>
+						</div>
+					</div>
+					<figcaption>Самое ламповое выполнение пакта?)</figcaption>
+				</figure>
+			</article>
+		</main>
+	</body>
+</html>
